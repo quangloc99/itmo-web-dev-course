@@ -1,4 +1,5 @@
 <?php
+require_once 'utils.php';
 
 class Query
 {
@@ -22,7 +23,7 @@ class Query
 
     public static function fromAssociativeArray($arr)
     {
-        return new Query($arr['x'], $arr['y'], $arr['r']);
+        return new Query(stringToNum($arr['x']), stringToNum($arr['y']), stringToNum($arr['r']));
     }
 
     public function getResult()
