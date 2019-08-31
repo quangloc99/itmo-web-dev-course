@@ -21,7 +21,7 @@ class Query
         $this->r = $r;
     }
 
-    public static function fromAssociativeArray($arr)
+    public static function fromAssociativeArray($arr): Query
     {
         return new Query(stringToNum($arr['x']), stringToNum($arr['y']), stringToNum($arr['r']));
     }
