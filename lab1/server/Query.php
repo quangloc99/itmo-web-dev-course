@@ -51,8 +51,21 @@ class Query
         return $this->x + $this->y <= $this->r;
     }
 
+    public function toHTMLTableRow(): string
+    {
+        $result = $this->getResult() ? 'YES' : 'NO';
+        return <<<END
+        <tr>
+            <td>{$this->getX()}</td>
+            <td>{$this->getY()}</td>
+            <td>{$this->getR()}</td>
+            <td>{$result}</td>
+        </tr>
+END;
+    }
+
     /**
-     * @return mixed
+     * @return float
      */
     public function getX()
     {
@@ -60,7 +73,7 @@ class Query
     }
 
     /**
-     * @return mixed
+     * @return float
      */
     public function getY()
     {
@@ -68,7 +81,7 @@ class Query
     }
 
     /**
-     * @return mixed
+     * @return float
      */
     public function getR()
     {
