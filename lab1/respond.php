@@ -6,6 +6,7 @@ session_start();
 if (!array_key_exists('queries', $_SESSION)) {
     $_SESSION['queries'] = array();
 }
+/** @var Query[] $queries */
 $queries = &$_SESSION['queries'];
 $queries[] = Query::fromAssociativeArray($_GET);
 
@@ -17,15 +18,15 @@ $queries[] = Query::fromAssociativeArray($_GET);
 </head>
 <body>
     <table>
-        <thead>
+        <thead><tr>
             <th scope="col">Point X</th>
             <th scope="col">Point Y</th>
             <th scope="col">Parameter R</th>
             <th scope="col">Result (Point lies inside the graph?)</th>
-        </thead>
+        </tr></thead>
         <tbody>
         <?php
-            foreach ($queries as $query) {
+            foreach (array_reverse($queries) as $query) {
                 echo ($query->toHTMLTableRow());
             }
         ?>
