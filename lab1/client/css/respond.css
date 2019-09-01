@@ -1,0 +1,27 @@
+table {
+    table-layout: auto;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table thead {
+    border-bottom: 1px solid black;
+}
+
+table tbody td {
+    text-align: center;
+}
+
+table td:not(:first-child),
+table th:not(:first-child)
+{
+    border-left: 1px solid black;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+table tbody tr:hover {
+    background-color: #afe2f7;
+}
