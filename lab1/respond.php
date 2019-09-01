@@ -1,6 +1,6 @@
 <?php
 //phpinfo();
-require_once 'server/Query.php';
+require_once 'src/Query.php';
 
 session_start();
 
