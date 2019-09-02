@@ -59,13 +59,11 @@ class Query
         $result = $this->getResult() ? 'YES' : 'NO';
         $formatedDate= date("H:i:s d/n/Y", $this->creationTime);
         return <<<END
-        <tr>
             <td>{$this->getX()}</td>
             <td>{$this->getY()}</td>
             <td>{$this->getR()}</td>
             <td>{$result}</td>
             <td>{$formatedDate}</td>
-        </tr>
 END;
     }
 

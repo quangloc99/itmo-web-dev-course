@@ -6,13 +6,18 @@ session_start();
 if (!array_key_exists('queries', $_SESSION)) {
     $_SESSION['queries'] = array();
 }
-/** @var Query[] $queries */
+/**
+ * @var Query[] $queries
+ * @var Exception|null $queryError
+ * @var Query $newQuery
+ */
 $queries = &$_SESSION['queries'];
-/** @var Exception|null $queryError */
 $queryError = null;
+$newQuery = null;
 
 try {
-    $queries[] = Query::fromAssociativeArray($_GET);
+    $newQuery = Query::fromAssociativeArray($_GET);
+    $queries[] = $newQuery;
 } catch (ParseError $exception) {
     $queryError = $exception;
 }
@@ -42,11 +47,11 @@ try {
             <th scope="col">Query time</th>
         </tr></thead>
         <tbody>
-        <?php
-            foreach (array_reverse($queries) as $query) {
-                echo ($query->toHTMLTableRow());
-            }
-        ?>
+        <?php foreach (array_reverse($queries) as $query) { ?>
+            <tr <?php echo $query === $newQuery ? 'class="new-query"' : '' ?> >
+                <?= $query->toHTMLTableRow() ?>
+            </tr>
+        <?php } ?>
         </tbody>
     </table>
 </body>
