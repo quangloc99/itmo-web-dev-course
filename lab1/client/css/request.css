@@ -1,5 +1,94 @@
-input.error {
-    -webkit-box-shadow: 0px 0px 5px 2px rgba(255,0,0,1);
-    -moz-box-shadow: 0px 0px 5px 2px rgba(255,0,0,1);
-    box-shadow: 0px 0px 5px 2px rgba(255,0,0,1);
+body > *:not(header) {
+    margin: 20px 20px 0;
+}
+
+header {
+    padding: 10px;
+    font-family: monospace;
+    font-size: 20px;
+    color: var(--text-on-primary-color);
+    background-color: var(--primary-color);
+    box-sizing: border-box;
+}
+
+#description {
+    background-color: var(--background-color);
+    padding: 10px;
+}
+
+@media (min-width:700px) {
+    #description {
+        display: grid;
+        grid-template-columns: 2fr 300px;
+    }
+}
+
+#description figure {
+    margin: 0;
+}
+
+#data-form table {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 30px;
+    border-collapse: collapse;
+}
+
+tr th,
+tr td {
+    text-align: right;
+    padding: 5px;
+}
+
+table tr th[scope="row"] {
+    width: 150px;
+    background-color: var(--primary-color);
+}
+
+table td {
+    background-color: var(--background-color);
+}
+
+table tr:hover th[scope="row"] {
+    background-color: var(--primary-dark-color);
+}
+
+table tr:hover td {
+    background-color: var(--dark-background-color);
+}
+
+input[type="text"] {
+    width: auto;
+    margin-left: 10%;
+}
+
+.input-container {
+    line-height: 1.5;
+}
+
+.input-container.error input {
+    -webkit-box-shadow: 0px 0px 5px 2px var(--error-color);
+    -moz-box-shadow: 0px 0px 5px 2px var(--error-color);
+    box-shadow: 0px 0px 5px 2px var(--error-color);
+}
+
+#point-x-input.error::before {
+    content: "Remember that input must be a number in range [-3, 5].";
+    color: var(--error-color);
+}
+
+
+#submit-button {
+    margin-top: inherit;
+    background-color: var(--primary-color);
+    color: var(--text-on-primary-color);
+    width: 100%;
+    font-size: large;
+    padding: 5px;
+    border: 0;
+}
+
+#submit-button:hover {
+    cursor: pointer;
+    background-color: var(--primary-dark-color);
 }

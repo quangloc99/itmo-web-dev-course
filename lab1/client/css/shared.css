@@ -1,4 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 html {
-    width: 1000px;
+    background-color: white;
+}
+
+body {
+    max-width: 1000px;
     margin: 0 auto;
+    background-color: var(--void-color);
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+figcaption {
+    font-style: italic;
+    text-align: center;
 }

@@ -22,7 +22,7 @@ const form = {
                 this.container.appendChild(this.element);
 
                 this.element.addEventListener('input', event => {
-                    this.element.classList.remove('error')
+                    this.container.classList.remove('error')
                 });
 
                 form.element.addEventListener("submit", event=> {
@@ -31,7 +31,7 @@ const form = {
                     let num = Number(value);
                     if (!isNaN(num) && num >= this.range.low && num <= this.range.high) return;
 
-                    this.element.classList.add('error');
+                    this.container.classList.add('error');
                     event.preventDefault();
                     return false;
                 });
