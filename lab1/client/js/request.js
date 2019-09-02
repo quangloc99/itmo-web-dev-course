@@ -27,9 +27,9 @@ const form = {
 
                 form.element.addEventListener("submit", event=> {
                     // it will be nicer to have a function for validating, but meh.
-                    let value = this.element.value.replace(/,/g, '.');
+                    let value = this.element.value.trim().replace(/,/g, '.');
                     let num = Number(value);
-                    if (!isNaN(num) && num >= this.range.low && num <= this.range.high) return;
+                    if (value !== "" && !isNaN(num) && num >= this.range.low && num <= this.range.high) return;
 
                     this.container.classList.add('error');
                     event.preventDefault();

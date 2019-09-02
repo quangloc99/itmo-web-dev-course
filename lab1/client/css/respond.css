@@ -25,3 +25,10 @@ table tbody tr:hover td {
     background-color: var(--primary-dark-color);
     color: white;
 }
+
+.error-message {
+    padding: 5px;
+    width: 100%;
+    color: var(--error-color);
+    background: var(--background-color);
+}
