@@ -13,6 +13,7 @@ $queries[] = Query::fromAssociativeArray($_GET);
 ?>
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="client/css/color-palette.css">
     <link rel="stylesheet" type="text/css" href="client/css/shared.css">
     <link rel="stylesheet" type="text/css" href="client/css/respond.css">
 </head>

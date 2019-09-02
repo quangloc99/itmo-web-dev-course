@@ -10,9 +10,48 @@ body {
     background-color: var(--void-color);
     height: 100%;
     font-family: 'Roboto', sans-serif;
+    padding: 20px 20px;
+}
+
+body > *:not(:first-child) {
+    margin: 20px 0 0;
+}
+
+body > header {
+    margin: -20px -20px 0;
+}
+
+header {
+    padding: 10px;
+    font-family: monospace;
+    font-size: 20px;
+    color: var(--text-on-primary-color);
+    background-color: var(--primary-color);
+    box-sizing: border-box;
 }
 
 figcaption {
     font-style: italic;
     text-align: center;
+}
+
+table th {
+    background-color: var(--primary-color);
+}
+
+table td {
+    background-color: var(--background-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--text-on-primary-color);
+    font-size: large;
+    padding: 5px;
+    border: 0;
+}
+
+button:hover {
+    background-color: var(--primary-dark-color);
+    color: white;
 }

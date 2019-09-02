@@ -1,16 +1,3 @@
-body > *:not(header) {
-    margin: 20px 20px 0;
-}
-
-header {
-    padding: 10px;
-    font-family: monospace;
-    font-size: 20px;
-    color: var(--text-on-primary-color);
-    background-color: var(--primary-color);
-    box-sizing: border-box;
-}
-
 #description {
     background-color: var(--background-color);
     padding: 10px;
@@ -42,15 +29,11 @@ tr td {
 
 table tr th[scope="row"] {
     width: 150px;
-    background-color: var(--primary-color);
-}
-
-table td {
-    background-color: var(--background-color);
 }
 
 table tr:hover th[scope="row"] {
     background-color: var(--primary-dark-color);
+    color: white;
 }
 
 table tr:hover td {
@@ -60,6 +43,7 @@ table tr:hover td {
 input[type="text"] {
     width: auto;
     margin-left: 10%;
+    text-align: right;
 }
 
 .input-container {
@@ -73,22 +57,16 @@ input[type="text"] {
 }
 
 #point-x-input.error::before {
-    content: "Remember that input must be a number in range [-3, 5].";
+    content: "Input must be a number between -3 and 5.";
     color: var(--error-color);
 }
 
 
 #submit-button {
     margin-top: inherit;
-    background-color: var(--primary-color);
-    color: var(--text-on-primary-color);
     width: 100%;
-    font-size: large;
-    padding: 5px;
-    border: 0;
 }
 
 #submit-button:hover {
     cursor: pointer;
-    background-color: var(--primary-dark-color);
 }

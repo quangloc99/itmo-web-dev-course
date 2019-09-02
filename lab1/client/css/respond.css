@@ -1,7 +1,7 @@
 table {
     table-layout: auto;
-    width: 100%;
     border-collapse: collapse;
+    width: 100%;
 }
 
 table thead {
@@ -17,10 +17,11 @@ table th:not(:first-child) {
     border-left: 1px solid black;
 }
 
-table tbody tr:nth-child(odd) {
-    background-color: #eeeeee;
+table tbody tr:nth-child(odd) td {
+    background-color: var(--dark-background-color);
 }
 
-table tbody tr:hover {
-    background-color: #afe2f7;
+table tbody tr:hover td {
+    background-color: var(--primary-dark-color);
+    color: white;
 }
