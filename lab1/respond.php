@@ -27,6 +27,9 @@ try {
     <link rel="stylesheet" type="text/css" href="client/css/respond.css">
 </head>
 <body>
+    <header>
+        <h2>Queries result</h2>
+    </header>
     <?php if ($queryError != null) { ?>
         <div class="error-message">Error: <?= $queryError->getMessage() ?> </div>
     <?php } ?>

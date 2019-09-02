@@ -22,12 +22,19 @@ body > header {
 }
 
 header {
-    padding: 10px;
     font-family: monospace;
-    font-size: 20px;
     color: var(--text-on-primary-color);
     background-color: var(--primary-color);
     box-sizing: border-box;
+    font-size: 15px;
+}
+
+header > * {
+    padding: 5px 20px;
+}
+
+header h1, header h2 {
+    margin: 0;
 }
 
 figcaption {
