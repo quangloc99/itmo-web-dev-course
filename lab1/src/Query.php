@@ -62,7 +62,7 @@ class Query
             <td>{$this->getX()}</td>
             <td>{$this->getY()}</td>
             <td>{$this->getR()}</td>
-            <td>{$result}</td>
+            <td class="result $result">$result</td>
             <td>{$formatedDate}</td>
 END;
     }

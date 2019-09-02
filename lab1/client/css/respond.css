@@ -47,3 +47,10 @@ table tbody tr:hover td {
     background: var(--background-color);
 }
 
+table tbody td.result.YES {
+    color: #11a80f;
+}
+
+table tbody td.result.NO {
+    color: #f57f17;
+}
