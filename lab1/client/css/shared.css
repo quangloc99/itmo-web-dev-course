@@ -62,3 +62,10 @@ button:hover {
     background-color: var(--primary-dark-color);
     color: white;
 }
+
+
+* {
+    /*-webkit-transition: background-color, color 0.25s ease-out;*/
+    /*-moz-transition: background-color, color 0.25s ease-out;*/
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
