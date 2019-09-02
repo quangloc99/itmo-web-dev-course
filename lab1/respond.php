@@ -23,6 +23,7 @@ $queries[] = Query::fromAssociativeArray($_GET);
             <th scope="col">Point Y</th>
             <th scope="col">Parameter R</th>
             <th scope="col">Result (Point lies inside the graph?)</th>
+            <th scope="col">Query time</th>
         </tr></thead>
         <tbody>
         <?php

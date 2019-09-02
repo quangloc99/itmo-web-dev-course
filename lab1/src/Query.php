@@ -6,6 +6,7 @@ class Query
     private $x;
     private $y;
     private $r;
+    private $creationTime;
     private $result = null;
 
     /**
@@ -13,12 +14,14 @@ class Query
      * @param $x
      * @param $y
      * @param $r
+     * @param $creationTime
      */
-    public function __construct($x, $y, $r)
+    public function __construct($x, $y, $r, $creationTime = null)
     {
         $this->x = $x;
         $this->y = $y;
         $this->r = $r;
+        $this->creationTime = $creationTime ?: time();
     }
 
     public static function fromAssociativeArray($arr): Query
@@ -54,12 +57,14 @@ class Query
     public function toHTMLTableRow(): string
     {
         $result = $this->getResult() ? 'YES' : 'NO';
+        $formatedDate= date("H:i:s d/n/Y", $this->creationTime);
         return <<<END
         <tr>
             <td>{$this->getX()}</td>
             <td>{$this->getY()}</td>
             <td>{$this->getR()}</td>
             <td>{$result}</td>
+            <td>{$formatedDate}</td>
         </tr>
 END;
     }
