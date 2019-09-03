@@ -1,0 +1,36 @@
+.simple-window.container {
+    max-height: 1000px;  // infinity
+    width: 100%;
+    box-sizing: border-box;
+    transition: max-height 0.5s ease-out, margin 0.5s ease-out;
+    -moz-transition: max-height 0.5s ease-out, margin 0.5s ease-out;
+    -webkit-transition: max-height 0.5s ease-out, margin 0.5s ease-out;
+}
+
+.simple-window.container > .top-bar {
+    background-color: var(--primary-color);
+    min-height: 35px;
+}
+
+.simple-window.container > .top-bar > .title {
+    display: inline-block;
+    min-height: inherit;
+    box-sizing: border-box;
+    padding: 5px 10px;
+}
+
+.simple-window.container > .top-bar > button.close {
+    float: right;
+    width: 30px;
+    min-height: inherit;
+}
+
+.simple-window.container > .content {
+    background-color: var(--background-color);
+}
+
+.simple-window.container.closed {
+    overflow: hidden;
+    max-height: 0;
+    margin: 0;
+}
