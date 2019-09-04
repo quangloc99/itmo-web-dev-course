@@ -7,7 +7,7 @@ header * {
     padding: 3px 20px;
 }
 
-#description {
+section {
     background-color: var(--background-color);
     padding: 10px;
 }
