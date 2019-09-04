@@ -23,7 +23,7 @@ export class SimpleWindow {
      */
     constructor(title = '', content = null) {
         const container = document.createElement('div');
-        container.classList.add('simple-window', 'container');
+        container.classList.add('simple-window', 'container', 'closed');
 
         const topBar = document.createElement('div');
         topBar.classList.add('top-bar');
@@ -51,11 +51,27 @@ export class SimpleWindow {
         this._titleElement = titleElement;
         this._contentElement = contentElement;
 
-        SimpleWindow._closedWindows.push(this);
+    }
+
+    show() {
+        this.updateHeight();
+        this._container.classList.remove('closed');
+    }
+
+    hide() {
+        this.container.classList.add('closed');
+    }
+
+    updateHeight() {
+        this._container.style.height = (
+            this._titleElement.clientHeight +
+            this._contentElement.clientHeight
+        ) + "px";
     }
 
     _closeWindow() {
-        this._container.classList.add('closed');
+        this.hide();
+        SimpleWindow._closedWindows.push(this);
     }
 
 

@@ -1,10 +1,10 @@
 .simple-window.container {
-    max-height: 1000px;  // infinity
     width: 100%;
     box-sizing: border-box;
-    transition: max-height 0.5s ease-out, margin 0.5s ease-out;
-    -moz-transition: max-height 0.5s ease-out, margin 0.5s ease-out;
-    -webkit-transition: max-height 0.5s ease-out, margin 0.5s ease-out;
+    transition: height 0.25s ease-in, margin 0.25s ease-out;
+    -moz-transition: height 0.25s ease-in, margin 0.25s ease-out;
+    -webkit-transition: height 0.25s ease-in, margin 0.25s ease-out;
+    overflow: hidden;
 }
 
 .simple-window.container > .top-bar {
@@ -30,7 +30,6 @@
 }
 
 .simple-window.container.closed {
-    overflow: hidden;
-    max-height: 0;
+    height: 0 !important;
     margin: 0;
 }
