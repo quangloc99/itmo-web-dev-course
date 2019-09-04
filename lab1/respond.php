@@ -27,6 +27,7 @@ try {
 <html>
 <head>
     <meta charset="UTF-8">
+    <title>Lab 1 - Queries result</title>
     <link rel="stylesheet" type="text/css" href="client/css/color-palette.css">
     <link rel="stylesheet" type="text/css" href="client/css/shared.css">
     <link rel="stylesheet" type="text/css" href="client/css/respond.css">

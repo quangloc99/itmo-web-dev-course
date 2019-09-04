@@ -1,5 +1,10 @@
 <?php
-function stringToNum(string $str, string $allowedSeparators = ",.")
+/**
+ * @param string $str
+ * @param string $allowedSeparators
+ * @return float
+ */
+function stringToNum($str, $allowedSeparators = ",.")
 {
     if ($str === "") {
         throw new ParseError('Cannot parse empty string into number.');

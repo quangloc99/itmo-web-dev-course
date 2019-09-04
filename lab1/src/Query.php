@@ -24,7 +24,11 @@ class Query
         $this->creationTime = $creationTime ?: time();
     }
 
-    public static function fromAssociativeArray($arr): Query
+    /**
+     * @param array $arr
+     * @return Query
+     */
+    public static function fromAssociativeArray($arr)
     {
         return new Query(stringToNum($arr['x']), stringToNum($arr['y']), stringToNum($arr['r']));
     }
@@ -54,7 +58,10 @@ class Query
         return $this->x + $this->y <= $this->r;
     }
 
-    public function toHTMLTableRow(): string
+    /**
+     * @return string
+     */
+    public function toHTMLTableRow()
     {
         $result = $this->getResult() ? 'YES' : 'NO';
         $formatedDate= date("H:i:s d/n/Y", $this->creationTime);
