@@ -54,8 +54,10 @@ export class SimpleWindow {
     }
 
     show() {
-        this.updateHeight();
-        this._container.classList.remove('closed');
+        setTimeout(() => {
+            this.updateHeight();
+            this._container.classList.remove('closed');
+        }, 0);
     }
 
     hide() {
@@ -94,6 +96,20 @@ export class SimpleWindow {
      */
     get contentElement() {
         return this._contentElement;
+    }
+
+    /**
+     * @returns {string}
+     */
+    get title() {
+        return this._titleElement.innerText;
+    }
+
+    /**
+     * @param {string} val
+     */
+    set title(val) {
+        this._titleElement.innerHTML = val;
     }
 }
 

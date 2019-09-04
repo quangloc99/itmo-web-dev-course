@@ -1,0 +1,11 @@
+.ineedmeme {
+    text-align: center;
+}
+
+.ineedmeme > h2 {
+    margin-top: 0;
+}
+
+.ineedmeme > ul {
+    text-align: left;
+}

@@ -1,9 +1,12 @@
 "use strict";
-
+import * as easterEggs from './easter-eggs/all.js';
 
 const form = {
     element: document.getElementById('data-form'),
     init() {
+        if (initEasterEgg) {
+            initEasterEgg();
+        }
         for (const obj of Object.values(this.components)) {
             obj.init();
         }
@@ -78,6 +81,17 @@ const form = {
         }
     },
 };
+
+function initEasterEgg() {
+    form.element.addEventListener('submit', function (evt) {
+        const val = form.components.pointX.element.value;
+        for (let egg of Object.values(easterEggs)) {
+            if (egg.checkEasterEgg(val)) {
+                egg.performEasterEgg();
+            }
+        }
+    });
+}
 
 form.init();
 
