@@ -25,7 +25,7 @@ export const ineedmeme = {
              * @type {HTMLDocument}
              */
             const doc = this.response;
-            const title = doc.getElementsByTagName('title')[0].innerText.replace(' - Imgflip', '')
+            const title = doc.title.replace(' - Imgflip', '')
             const titleElm = document.createElement('h2');
             titleElm.innerHTML = title;
             const img = doc.getElementById('im');
@@ -55,7 +55,11 @@ export const ineedmeme = {
 
         xhrGetContent.responseType = 'document';
         xhrGetContent.addEventListener('error', handleError);
-        xhrGetContent.open('GET', '/lab1/src/easter-eggs/ineedmeme.php');
+
+        const currentNormalizedPath = new URL(window.location.href).pathname;
+        let parts = currentNormalizedPath.split('/');
+        parts.pop();
+        xhrGetContent.open('GET', parts.join('/') + '/src/easter-eggs/ineedmeme.php');
         xhrGetContent.send();
     },
 };
