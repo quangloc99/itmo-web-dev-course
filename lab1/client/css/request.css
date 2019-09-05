@@ -3,7 +3,7 @@ header > h1 {
     color: white;
 }
 
-header * {
+header > * {
     padding: 3px 20px;
 }
 
