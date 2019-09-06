@@ -18,6 +18,18 @@ $newQuery = null;
 try {
     $newQuery = Query::fromAssociativeArray($_GET);
     $queries[] = $newQuery;
+    $xIsValid = -3 <= $newQuery->getX() && $newQuery->getX() <= 5;
+    $yIsValid = -3 <= $newQuery->getY() && $newQuery->getY() <= 5;
+    $rIsValid = 1 <= $newQuery->getR() && $newQuery->getR() <= 5;
+    if (!$xIsValid) {
+        throw new Exception('X is out of range. But since it ok, the query is still processed.');
+    }
+    if (!$yIsValid) {
+        throw new Exception('Y is out of range. But since it ok, the query is still processed.');
+    }
+    if (!$rIsValid) {
+        throw new Exception('R is out of range. But since it ok, the query is still processed.');
+    }
 } catch (Exception $exception) {
     $queryError = $exception;
 }
