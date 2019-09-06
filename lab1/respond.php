@@ -18,7 +18,7 @@ $newQuery = null;
 try {
     $newQuery = Query::fromAssociativeArray($_GET);
     $queries[] = $newQuery;
-} catch (ParseError $exception) {
+} catch (Exception $exception) {
     $queryError = $exception;
 }
 
